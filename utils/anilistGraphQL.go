@@ -29,6 +29,9 @@ const Query = `
 						native
 						userPreferred
 						}
+            coverImage{
+              large
+            }
 					}
       			}
     		}

@@ -23,6 +23,9 @@ type Media struct {
 		Native        string `json:"native"`
 		UserPreferred string `json:"userPreferred"`
 	} `json:"title"`
+	CoverImage struct {
+		Large string `json:"large"`
+	}
 }
 
 type Entry struct {
