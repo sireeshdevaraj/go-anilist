@@ -4,14 +4,15 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/joho/godotenv"
-	"github.com/machinebox/graphql"
-	"github.com/sireeshdevaraj/Go-anilistv1.0.0/utils"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/joho/godotenv"
+	"github.com/machinebox/graphql"
+	"github.com/sireeshdevaraj/Go-anilistv1.0.0/utils"
 )
 
 func getAnilistDataOfUser(userId int) ([]byte, error) {
@@ -60,6 +61,7 @@ func main() {
 			return
 		}
 		response.Header().Set("Content-Type", "Application/json")
+		response.Header().Set("Access-Control-Allow-Origin", "*")
 		response.Write(data)
 	}
 	http.HandleFunc("/anilist/", getHandler)
